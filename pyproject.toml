@@ -1,0 +1,24 @@
+[project]
+name = "kurs-forecast"
+version = "1.0.0"
+description = "Peramalan kurs IDR/USD mingguan: ARIMA vs SVR, uji Diebold-Mariano, dan Value at Risk"
+authors = [{ name = "Immantaka Juniarsa", email = "immantakajuniarsa30@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 160
+target-version = "py310"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E731"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::UserWarning", "ignore::FutureWarning", "ignore::RuntimeWarning"]

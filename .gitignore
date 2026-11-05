@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+
+# Lingkungan
+.venv/
+venv/
+env/
+.env
+
+# Editor dan OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data besar hasil unduhan (data contoh di data/raw tetap disimpan)
+data/raw/*_latest.csv
