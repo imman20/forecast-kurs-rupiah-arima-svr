@@ -17,7 +17,7 @@ jobs:
       - name: Pasang dependensi
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
       - name: Lint dengan ruff
         run: ruff check src tests app
       - name: Unit test
