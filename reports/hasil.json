@@ -1,0 +1,260 @@
+{
+  "karakteristik": {
+    "n_total": 105,
+    "n_train": 84,
+    "n_test": 21,
+    "kurs_min": 14070.0,
+    "kurs_max": 15735.0,
+    "kurs_mean": 14871.15238095238,
+    "terasvirta": {
+      "f_statistic": 2.992825430248506,
+      "pvalue": 0.05465708191579351,
+      "nonlinier": false
+    },
+    "boxcox_lambda": -0.9999959801362373,
+    "adf_level": {
+      "statistic": -1.536140734531691,
+      "pvalue": 0.5155633509317271,
+      "lags": 0,
+      "nobs": 83,
+      "stasioner": false
+    },
+    "adf_boxcox": {
+      "statistic": -1.5364119976434114,
+      "pvalue": 0.5154281577106825,
+      "lags": 0,
+      "nobs": 83,
+      "stasioner": false
+    },
+    "adf_diff1": {
+      "statistic": -5.652831357536825,
+      "pvalue": 9.771489085312446e-07,
+      "lags": 1,
+      "nobs": 81,
+      "stasioner": true
+    },
+    "adf_diff2": {
+      "statistic": -5.815227950287791,
+      "pvalue": 4.308050671569106e-07,
+      "lags": 7,
+      "nobs": 74,
+      "stasioner": true
+    },
+    "kpss_level": {
+      "statistic": 1.0890993963647926,
+      "pvalue": 0.01,
+      "lags": 5,
+      "stasioner": false
+    },
+    "kpss_diff2": {
+      "statistic": 0.09638977999891395,
+      "pvalue": 0.1,
+      "lags": 11,
+      "stasioner": true
+    }
+  },
+  "arima": {
+    "order": [
+      0,
+      2,
+      1
+    ],
+    "lambda": -0.9999959801362373,
+    "params": {
+      "ma.L1": -0.9835102146007577
+    },
+    "pvalues": {
+      "ma.L1": 2.706487063984585e-45
+    },
+    "aic": 23.102766176437814,
+    "ljung_box": [
+      {
+        "lag": 12,
+        "lb_stat": 9.191370012429422,
+        "lb_pvalue": 0.6865038074169203,
+        "white_noise": true
+      },
+      {
+        "lag": 24,
+        "lb_stat": 17.839502507843267,
+        "lb_pvalue": 0.8107239853187146,
+        "white_noise": true
+      },
+      {
+        "lag": 36,
+        "lb_stat": 33.16310272531665,
+        "lb_pvalue": 0.6042431641709274,
+        "white_noise": true
+      },
+      {
+        "lag": 48,
+        "lb_stat": 39.71005727365747,
+        "lb_pvalue": 0.7970821252358751,
+        "white_noise": true
+      }
+    ],
+    "normalitas": {
+      "ks_statistic": 0.08578507862651974,
+      "ks_pvalue": 0.5531969070772292,
+      "shapiro_statistic": 0.9683540031186011,
+      "shapiro_pvalue": 0.04035702613411827,
+      "normal_ks": true,
+      "normal_shapiro": false
+    },
+    "metrik_train": {
+      "RMSE": 129.3987365746249,
+      "MAE": 96.2382184189692,
+      "MAPE": 0.6455985216485267
+    },
+    "metrik_test": {
+      "RMSE": 421.04860720742664,
+      "MAE": 377.0157364940503,
+      "MAPE": 2.4733691207058457
+    },
+    "tabel_kandidat": [
+      {
+        "model": "ARIMA(0, 2, 1)",
+        "parameter": "ma.L1=-0.9835",
+        "semua_signifikan": true,
+        "white_noise": true,
+        "normal_ks": true,
+        "AIC": 23.102766176437814,
+        "RMSE_train": 129.3987365746249,
+        "MAPE_train": 0.6455985216485267,
+        "terpilih": true
+      },
+      {
+        "model": "ARIMA(1, 2, 0)",
+        "parameter": "ar.L1=-0.6057",
+        "semua_signifikan": true,
+        "white_noise": true,
+        "normal_ks": true,
+        "AIC": 44.38174211603036,
+        "RMSE_train": 147.2315390233922,
+        "MAPE_train": 0.7626408460856104,
+        "terpilih": false
+      },
+      {
+        "model": "ARIMA(2, 2, 0)",
+        "parameter": "ar.L1=-0.8058, ar.L2=-0.3203",
+        "semua_signifikan": true,
+        "white_noise": true,
+        "normal_ks": true,
+        "AIC": 37.8307126410096,
+        "RMSE_train": 139.12905576532324,
+        "MAPE_train": 0.722404505278764,
+        "terpilih": false
+      },
+      {
+        "model": "ARIMA(1, 2, 1)",
+        "parameter": "ar.L1=-0.0983, ma.L1=-0.9639",
+        "semua_signifikan": false,
+        "white_noise": true,
+        "normal_ks": true,
+        "AIC": 24.42714100985266,
+        "RMSE_train": 129.01102052187127,
+        "MAPE_train": 0.642279837629756,
+        "terpilih": false
+      },
+      {
+        "model": "ARIMA(2, 2, 1)",
+        "parameter": "ar.L1=-0.0656, ar.L2=0.1552, ma.L1=-0.9982",
+        "semua_signifikan": false,
+        "white_noise": true,
+        "normal_ks": true,
+        "AIC": 24.633194309249735,
+        "RMSE_train": 127.37000619788698,
+        "MAPE_train": 0.6386911625791792,
+        "terpilih": false
+      }
+    ]
+  },
+  "svr": {
+    "rbf": {
+      "best_params": {
+        "C": 512.0,
+        "epsilon": 0.3,
+        "gamma": 0.125
+      },
+      "cv_rmse": 176.19782962344357,
+      "metrik_train": {
+        "RMSE": 118.4888309755776,
+        "MAE": 91.66707863938717,
+        "MAPE": 0.6159136279349001
+      },
+      "metrik_test": {
+        "RMSE": 93.6003570942452,
+        "MAE": 76.87130602814943,
+        "MAPE": 0.5094622751428803
+      },
+      "metrik_test_rekursif": {
+        "RMSE": 554.631016571145,
+        "MAE": 501.8888976107304,
+        "MAPE": 3.2938109582783324
+      }
+    },
+    "poly": {
+      "best_params": {
+        "C": 2.0,
+        "epsilon": 0.5,
+        "gamma": 0.125
+      },
+      "cv_rmse": 312.5142774942481,
+      "metrik_train": {
+        "RMSE": 436.26754558169023,
+        "MAE": 385.3163631084822,
+        "MAPE": 2.6046337218485256
+      },
+      "metrik_test": {
+        "RMSE": 413.37342937667114,
+        "MAE": 390.9321435122729,
+        "MAPE": 2.570072950254986
+      },
+      "metrik_test_rekursif": {
+        "RMSE": 500.9343024632031,
+        "MAE": 459.4296402643416,
+        "MAPE": 3.016524391520611
+      }
+    }
+  },
+  "diebold_mariano_svr_vs_arima": {
+    "dm_statistic": -4.545989825837644,
+    "pvalue": 0.0001965527758928937,
+    "model_1_lebih_baik": true
+  },
+  "risiko": {
+    "alpha": 0.05,
+    "n_return": 104,
+    "mean_return_pct": 0.08936726091120122,
+    "std_return_pct": 0.7946840894973964,
+    "var_historis_pct": 1.1931972773690978,
+    "var_parametrik_pct": 1.3965062678016222,
+    "es_historis_pct": 1.4111676333214085,
+    "nominal_usd": 100000,
+    "kurs_akhir": 15605.0,
+    "var_historis_rp": 18731372.391360056,
+    "var_parametrik_rp": 21945357.80473936,
+    "es_historis_rp": 22177382.91140675
+  },
+  "skripsi": {
+    "arima_order": [
+      0,
+      2,
+      1
+    ],
+    "arima_ma1": -0.98277,
+    "arima_test": {
+      "RMSE": 425.398,
+      "MAPE": 2.49
+    },
+    "svr_rbf_params": {
+      "C": 16,
+      "epsilon": 0.1,
+      "gamma": 1
+    },
+    "svr_rbf_test": {
+      "RMSE": 93.653,
+      "MAPE": 0.539
+    }
+  }
+}
