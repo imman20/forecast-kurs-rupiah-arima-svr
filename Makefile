@@ -1,7 +1,7 @@
 .PHONY: install test lint pipeline notebooks app all
 
 install:
-	pip install -r requirements.txt
+	pip install -r requirements-dev.txt
 
 test:
 	python -m pytest -q

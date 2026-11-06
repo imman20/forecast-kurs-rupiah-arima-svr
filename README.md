@@ -9,6 +9,10 @@ Implementasi ulang skripsi S1 Statistika (Universitas Airlangga, 2024) dalam Pyt
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-SVR-F7931E?logo=scikitlearn&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-app-FF4B4B?logo=streamlit&logoColor=white)
 
+## English summary
+
+I compare ARIMA and Support Vector Regression for weekly IDR/USD forecasting using 105 observations. I reserve 21 weeks for chronological testing and tune SVR with time-series cross-validation. One-step RBF SVR achieves a MAPE of 0.509%, compared with 2.473% for ARIMA (0,2,1). Recursive SVR reaches 3.294%, so its one-step advantage does not extend to the full forecast horizon. I reproduce the analysis with `PYTHONPATH=src python -m kurs_forecast.pipeline` after installing the requirements.
+
 ![Perbandingan prediksi data testing](assets/08_perbandingan_testing.png)
 
 ## Daftar Isi
@@ -130,6 +134,10 @@ Laporan lengkap: [`reports/laporan_analisis.md`](reports/laporan_analisis.md).
 
 Aplikasi memungkinkan pengguna mengubah jumlah minggu training, memilih model ARIMA, menentukan horizon peramalan, dan menghitung VaR untuk nominal posisi tertentu. Jalankan dengan `streamlit run app/streamlit_app.py`.
 
+## Demo
+
+Tautan demo akan ditambahkan setelah deploy.
+
 ## Struktur Folder
 
 ```
@@ -165,7 +173,7 @@ forecast-kurs-rupiah-arima-svr/
 git clone https://github.com/imman20/forecast-kurs-rupiah-arima-svr.git
 cd forecast-kurs-rupiah-arima-svr
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 Menjalankan seluruh pipeline (sekitar 1 sampai 2 menit, grid search SVR 770 kombinasi):
